@@ -26,8 +26,15 @@ const giveaway = document.querySelector('.giveaway');
 const items = document.querySelectorAll('.deadline-format h4');
 const deadline = document.querySelector('.deadline');
 
-let futureDate = new Date(2024, 4, 24, 11, 30, 0);
+let tempDate = new Date();
+let tempYear = tempDate.getFullYear();
+let tempMonth = tempDate.getMonth();
+let tempDay = tempDate.getDay();
+
+// let futureDate = new Date(2024, 4, 24, 11, 30, 0);
 // console.log(futureDate);
+let futureDate = new Date(tempYear, tempMonth, tempDay + 10, 11, 30, 0);
+
 
 const year = futureDate.getFullYear();
 const hours = futureDate.getHours();
@@ -39,7 +46,7 @@ const date = futureDate.getDate();
 
 const weekday = weekdays[futureDate.getDay()];
 
-giveaway.textContent = `giveaway ends on  ${weekday} ${date}, ${month} ${year} ${hours}:${minutes}`;
+giveaway.textContent = `giveaway ends on  ${weekday} ${date}, ${month} ${year} ${hours}:${minutes}am`;
 
 // items.forEach(function (item) {
 //     console.log(item);
